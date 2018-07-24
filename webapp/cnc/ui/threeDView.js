@@ -266,7 +266,14 @@ define(['THREE', 'TWEEN', 'cnc/util', 'libs/threejs/OrbitControls', 'cnc/ui/cube
             this.scene.add(directionalLight2);
             this.overlayScene.add(directionalLight.clone());
             this.overlayScene.add(directionalLight2.clone());
-            this.normalMaterial = new THREE.LineBasicMaterial({linewidth: 1.5, color: 0xFFFFFF});
+            
+
+            //selfsame - here's the view material
+            this.normalMaterial = new THREE.LineBasicMaterial({linewidth: 1.5, color: 0xFFFFFF, opacity:0.5, transparent:true});
+
+
+
+
             this.rapidMaterial = new THREE.LineBasicMaterial({linewidth: 1.5, color: 0xFF0000});
             this.outlineMaterial = new THREE.LineBasicMaterial({linewidth: 1.5, color: 0xFFFF00});
             this.highlightMaterial = new THREE.LineBasicMaterial({

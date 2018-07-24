@@ -274,6 +274,7 @@ var tasks = {
         });
     },
     computeDuration: function (event) {
+        console.log("worker.js")
         require(['cnc/cam/toolpath', 'cnc/util', 'cnc/gcode/simulation'], function (tp, util, simulation) {
             var totalTime = 0;
             event.data.path.forEach(function (p) {

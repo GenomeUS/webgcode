@@ -73,3 +73,11 @@ get_file(QueryString()["gcode"], function(res){
 		reader.readAsBinaryString(res);
 	})
 })
+
+setview3d = function(e){
+	document.body.classList.remove("v2d")
+}
+
+setview2d = function(e){
+	document.body.classList.add("v2d")
+}

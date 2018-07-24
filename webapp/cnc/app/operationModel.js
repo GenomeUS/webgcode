@@ -1,4 +1,7 @@
 "use strict";
+
+// I NEVER RUN
+
 define(['Ember', 'EmberData', 'cnc/cam/cam', 'cnc/util', 'cnc/cam/operations', 'cnc/cam/toolpath',
         'cnc/cam/3D/3Dcomputer', 'require', 'cnc/gcode/simulation'],
     function (Ember, DS, cam, util, Operations, tp, Computer, require, simulation) {
@@ -6,6 +9,7 @@ define(['Ember', 'EmberData', 'cnc/cam/cam', 'cnc/util', 'cnc/cam/operations', '
         var operationDefinition = {
             init: function () {
                 this._super.apply(this, arguments);
+                
             },
 
             name: attr('string', {defaultValue: 'New Operation'}),
@@ -193,6 +197,7 @@ define(['Ember', 'EmberData', 'cnc/cam/cam', 'cnc/util', 'cnc/cam/operations', '
                 }, this.get('job.safetyZ'), this.get('toolpath'), this.get('id'));
             }.property('toolpath', 'job.safetyZ'),
             computeOperationDuration: function () {
+                console.log("computer")
                 this.set('operationDuration', 'computing duration...');
                 if (this.get('durationWorker'))
                     this.get('durationWorker').terminate();

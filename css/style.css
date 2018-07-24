@@ -1,77 +1,144 @@
-        body, html {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            margin: 0;
-        }
+body, html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
 
-        body {
-            padding-left: 8px;
-            padding-right: 8px;
-        }
+body {
+    padding-left: 8px;
+    padding-right: 8px;
+}
 
-        h1 {
-            margin-top: 0;
-            text-align: center;
-        }
+h1 {
+    margin-top: 0;
+    text-align: center;
+}
 
-        .editBlock {
-            position: relative;
-            float: left;
-            width: 19%;
-            height: 400px;
-            padding: 1px;
-            margin: 0;
+.editBlock {
+    position: relative;
+    float: left;
+    width: 19%;
+    height: 400px;
+    padding: 1px;
+    margin: 0;
 
-        }
+}
 
-        .ace_editor, .editBlock button {
-            display:none;
-        }
+.ace_editor, .editBlock button {
+    display:none;
+}
 
-        .editBlock pre {
-            width: 100%;
-            margin: 0;
-        }
+.editBlock pre {
+    width: 100%;
+    margin: 0;
+}
 
-        .viewContainer {
-            float: right;
-            width: 80%;
-        }
+.viewContainer {
+    float: right;
+    width: 80%;
+}
 
-        #loader {
-            display: inline-block;
-            background-size: 100% 100%;
-            background-image: url(webapp/images/spinner.svg);
-            width: 20px;
-            height: 20px;
-        }
+#loader {
+    display: inline-block;
+    background-size: 100% 100%;
+    background-image: url(webapp/images/spinner.svg);
+    width: 20px;
+    height: 20px;
+}
 
-        .boundsTable {
-            border-collapse: collapse;
-        }
+.boundsTable {
+    border-collapse: collapse;
+}
 
-        .boundsTable td {
-            border: dashed gray 1px;
-            padding: 3px;
-        }
+.boundsTable td {
+    border: dashed gray 1px;
+    padding: 3px;
+}
 
-        .ThreeDView {
-            border: solid gray 1px;
-            background: #000;
-            height: 400px;
-            position: relative;
-        }
+.ThreeDView {
+    border: solid gray 1px;
+    background: #000;
+    height: 400px;
+    position: relative;
+}
 
-        .TwoDView {
-            border: solid gray 1px;
-            background: #000;
-            height: 400px;
-        }
+.TwoDView {
+    border: solid gray 1px;
+    background: #000;
+    height: 400px;
+}
 
-        #app {
-            position: relative;
-        }
+#app {
+    position: relative;
+}
+
+
+
+
+.ThreeDView, .TwoDView {
+    height: 800px;
+    position:absolute;
+    right: 10px;
+    left: 15%;
+}
+
+#app .TwoDView{
+    opacity: 0;
+    pointer-events:none;
+}
+
+body.v2d #app .TwoDView{
+    opacity:1.0;
+    pointer-events: auto;
+}
+
+
+menu {
+    position:absolute;
+    width:300px;
+    right:0px;
+    top:0px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+menu span {
+    cursor: pointer;
+    font-family: courier, monospace;
+    margin: 0.4em;
+    border-radius: 0.5em;
+    padding: 0.4em 0.6em;
+    font-size: 0.9em;
+    color: black;
+}
+
+
+
+menu span:hover {
+    text-decoration: underline;
+}
+
+
+menu span.view3d {
+    background: rgb(215,45,78);
+    color: white;
+}
+
+menu span.view2d {
+    background: none;
+    color: black;
+}
+
+body.v2d menu span.view3d {
+    background: none;
+    color: black;
+}
+
+body.v2d menu span.view2d {
+    background: rgb(215,45,78);
+    color: white;
+}

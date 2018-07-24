@@ -132,8 +132,10 @@ define(['Ember', 'EmberData', 'cnc/cam/cam', 'cnc/util', 'cnc/cam/operations', '
                 return oneIsEnabled && !oneIsComputing;
             }.property('operations', 'operations.@each.enabled', 'operations.@each.computing'),
             computeDuration: function () {
+                // I NEVER RUN
                 if (!this.get('wholeProgram').path.length)
                     return;
+
                 this.set('duration', 'computing...');
                 if (this.get('durationWorker'))
                     this.get('durationWorker').terminate();
@@ -141,6 +143,7 @@ define(['Ember', 'EmberData', 'cnc/cam/cam', 'cnc/util', 'cnc/cam/operations', '
                 this.set('durationWorker', worker);
                 var _this = this;
                 worker.onmessage = Ember.run.bind(this, function (event) {
+                    console.log("WORKER-RESULT", event.data)
                     _this.set('duration', event.data.duration);
                     worker.terminate();
                     _this.set('durationWorker', null);

@@ -16,13 +16,16 @@
     <link rel="shortcut icon" href="webapp/images/icon_fraise_48.png"/>
     <link rel="stylesheet" href="webapp/twoDView.css" type="text/css">
     <link rel="stylesheet" href="webapp/threeDView.css" type="text/css">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="./css/style.css?v=0.1" type="text/css">
 </head>
 <body>
 
 
 <h1>GCode Viewer</h1>
-
+<menu>
+    <span class="view3d" onclick="setview3d()">3D view</span>
+    <span class="view2d" onclick="setview2d()">2D view</span>
+</menu>
 <div id="app">
 
 </div>
@@ -47,6 +50,7 @@
                 Simulator.ApplicationController = Ember.ObjectController.extend({
                     init: function () {
                         window.app = this;
+                        window.gcdoesim = gcodeSimulation
                         this._super();
                         var _this = this;
                         $(window).on('dragover', function (event) {
@@ -85,6 +89,7 @@
                         var _this = this;
 
                         function handleResult(result) {
+                            window.result = result
                             _this.flushFragmentFile();
                             var errors = [];
                             for (var i = 0; i < result.errors.length; i++) {
@@ -137,7 +142,7 @@
                 });
             });
 </script>
-<script src="./create.js"></script>
+<script src="./create.js?v=0.1"></script>
 </body>
 </html>
 

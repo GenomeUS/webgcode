@@ -304,6 +304,7 @@ define(['cnc/util', 'cnc/gcode/geometry'], function (util, geometry) {
         return {totalTime: totalTime, min: bBox.minPoint(), max: bBox.maxPoint()};
     }
 
+
     return {
         planSpeed: planSpeed,
         simulate2: simulate2,

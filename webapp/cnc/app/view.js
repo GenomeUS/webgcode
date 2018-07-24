@@ -142,6 +142,14 @@ define(['Ember', 'cnc/ui/threeDView', 'THREE', 'cnc/util', 'cnc/cam/3D/toolProfi
         var ThreeDView = Ember.View.extend({
             classNames: ['ThreeDView'],
             didInsertElement: function () {
+                console.log("ThreeDView") // not used?
+                var alphamaterial = new THREE.MeshLambertMaterial({
+                    color: 0xFEEFFE,
+                })
+                window.alphamaterial = alphamaterial
+                alphamaterial.uniforms.transparent = true;
+                alphamaterial.uniforms.opacity = 0.3;
+
                 var threeDView = new TreeDView.ThreeDView(this.$());
                 threeDView.normalToolpathNode.lineMaterial = new THREE.LineBasicMaterial({
                     linewidth: 1.5,
@@ -171,13 +179,13 @@ define(['Ember', 'cnc/ui/threeDView', 'THREE', 'cnc/util', 'cnc/cam/3D/toolProfi
                     color: 0xdd4c2f, opacity: 0.5
                 })));
 
+
+
                 this.synchronizeJob();
                 wrapModelCollection(this.get('controller.shapes'), function (shape) {
                     return ShapeWrapper.create({
                         shape: shape,
-                        outlineDisplay: threeDView.createDrawingNode(threeDView.outlineMaterial, new THREE.MeshLambertMaterial({
-                            color: 0xFEEFFE
-                        }))
+                        outlineDisplay: threeDView.createDrawingNode(threeDView.outlineMaterial, alphamaterial)
                     });
                 });
                 var _this = this;
