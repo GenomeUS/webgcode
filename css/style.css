@@ -25,6 +25,7 @@ h1 {
     height: 400px;
     padding: 1px;
     margin: 0;
+    margin-top:4em;
 
 }
 
@@ -45,9 +46,10 @@ h1 {
 #loader {
     display: inline-block;
     background-size: 100% 100%;
-    background-image: url(webapp/images/spinner.svg);
+    background-image: url(../webapp/images/spinner.svg);
     width: 20px;
     height: 20px;
+    margin-left:30px;
 }
 
 .boundsTable {
@@ -141,4 +143,18 @@ body.v2d menu span.view3d {
 body.v2d menu span.view2d {
     background: rgb(215,45,78);
     color: white;
+}
+
+
+
+
+#create-stats {
+    position:absolute;
+    width:15%;
+}
+
+#create-stats p#filament-usage{
+    text-align:center;
+    margin-top: -13px;
+    width: 130px;
 }

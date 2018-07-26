@@ -56,10 +56,32 @@ unzip = function(blob, cb){
   })
 }
 
+lines = function(s){
+  return s.split(/\s*[\r\n]+\s*/g);
+}
+
+
+SETTINGS = {
+  absoluteExtrusion:false,
+  feedrateMultiplyer:100,
+  filamentDiameter:1.75,
+  firmwareRetractLength:2,
+  firmwareRetractSpeed:50,
+  firmwareRetractZhop:0,
+  firmwareUnretractLength:2,
+  firmwareUnretractSpeed:50,
+  maxJerk:[10, 10, 1, 10],
+  maxPrintAcceleration: [1000, 1000, 100, 10000],
+  maxSpeed: [100, 100, 10, 100],
+  maxTravelAcceleration: [1000, 1000, 100, 10000],
+  timeScale: 1.01}
+
 
 plot = function(data){
+  gcodeLines = lines(data)
 	app.set('code', data)
 	app.launchSimulation()
+  gcodeProcessorWorker.postMessage([gcodeLines, SETTINGS]);
 }
 
 get_file(QueryString()["gcode"], function(res){
@@ -80,4 +102,9 @@ setview3d = function(e){
 
 setview2d = function(e){
 	document.body.classList.add("v2d")
+}
+
+analysis = function(data){
+  console.log(data)
+  document.querySelector("#filament-usage").innerText = data.filamentUsage
 }

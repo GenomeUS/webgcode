@@ -16,6 +16,10 @@
     <link rel="shortcut icon" href="webapp/images/icon_fraise_48.png"/>
     <link rel="stylesheet" href="webapp/twoDView.css" type="text/css">
     <link rel="stylesheet" href="webapp/threeDView.css" type="text/css">
+
+    <script type="text/javascript" src="analyzer/gcodeAnalyser.js?1801221"></script>
+    <script type="text/javascript" src="analyzer/settings.js?1707260"></script>
+
     <link rel="stylesheet" href="./css/style.css?v=0.1" type="text/css">
 </head>
 <body>
@@ -27,7 +31,10 @@
     <span class="view2d" onclick="setview2d()">2D view</span>
 </menu>
 <div id="app">
-
+<div id="create-stats">
+    <p>Filament Usage:</p>
+    <p id="filament-usage"></p>
+</div>
 </div>
 <script id="demoCode" type="application/gcode"></script>
 <script>
