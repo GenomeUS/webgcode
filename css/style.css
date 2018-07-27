@@ -20,8 +20,8 @@ h1 {
 
 .editBlock {
     position: relative;
-    float: left;
-    width: 19%;
+    float: right;
+    width: 150px;
     height: 400px;
     padding: 1px;
     margin: 0;
@@ -62,15 +62,15 @@ h1 {
 }
 
 .ThreeDView {
-    border: solid gray 1px;
-    background: #000;
+    border: solid silver 1px;
+    background: #FFF;
     height: 400px;
     position: relative;
 }
 
 .TwoDView {
     border: solid gray 1px;
-    background: #000;
+    background: #FFF;
     height: 400px;
 }
 
@@ -84,8 +84,8 @@ h1 {
 .ThreeDView, .TwoDView {
     height: 800px;
     position:absolute;
-    right: 10px;
-    left: 15%;
+    right: 170px;
+    left: 10px;
 }
 
 #app .TwoDView{
@@ -150,11 +150,24 @@ body.v2d menu span.view2d {
 
 #create-stats {
     position:absolute;
-    width:15%;
+    width:140px;
+    right:10px;
 }
 
 #create-stats p#filament-usage{
     text-align:center;
     margin-top: -13px;
     width: 130px;
+}
+
+
+
+
+.TwoDView * {
+    
+}
+
+.paper * {
+    stroke: #c26518 !important;
+    stroke-opacity: 0.3;
 }

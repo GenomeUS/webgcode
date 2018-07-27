@@ -269,7 +269,7 @@ define(['THREE', 'TWEEN', 'cnc/util', 'libs/threejs/OrbitControls', 'cnc/ui/cube
             
 
             //selfsame - here's the view material
-            this.normalMaterial = new THREE.LineBasicMaterial({linewidth: 1.5, color: 0xFFFFFF, opacity:0.5, transparent:true});
+            this.normalMaterial = new THREE.LineBasicMaterial({linewidth: 1.5, color: 0xc26518, opacity:0.5, transparent:true});
 
 
 
@@ -283,7 +283,6 @@ define(['THREE', 'TWEEN', 'cnc/util', 'libs/threejs/OrbitControls', 'cnc/ui/cube
             //needed because requestAnimationFrame can't pass a "this".
             this.requestAnimationFrameCallback = this.actuallyRender.bind(this);
             $container.prepend(cubeManipulator(this));
-            $container.prepend($('<div class="3DWarning" title="maybe one day" style="position:absolute; top:0; right: 0;">Sorry, there is no mouse selection in this view.</div>'));
             this.rapidToolpathNode = this.createOverlayNode(this.rapidMaterial);
             this.normalToolpathNode = this.createDrawingNode(this.normalMaterial, new THREE.MeshBasicMaterial({
                 color: 0x6622BB,

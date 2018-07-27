@@ -106,5 +106,6 @@ setview2d = function(e){
 
 analysis = function(data){
   console.log(data)
-  document.querySelector("#filament-usage").innerText = data.filamentUsage
+  var grams = parseFloat(data.filamentUsage) * 2.4 
+  document.querySelector("#filament-usage").innerText = grams.toFixed(1) + " grams"
 }
