@@ -199,6 +199,8 @@ define(['THREE', 'TWEEN', 'cnc/util', 'libs/threejs/OrbitControls', 'cnc/ui/cube
                 var grid = new THREE.GridHelper(size, 30);
                 grid.applyMatrix(new THREE.Matrix4().makeRotationX(Math.PI / 2));
                 grid.setColors(0x9a9a9a, 0x9a9a9a);
+                grid.position.set(129,129,0)
+                window.grid = grid
                 return grid;
             }
 
