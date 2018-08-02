@@ -84,17 +84,20 @@ plot = function(data){
   gcodeProcessorWorker.postMessage([gcodeLines, SETTINGS]);
 }
 
-get_file(QueryString()["gcode"], function(res){
-	var blob = new Blob([res], { type: "application/zip" })
-	unzip(blob, function(res){
-		var reader = new FileReader();
-		reader.onload = function() {
-		    var res = reader.result
-			plot(res)
-		}
-		reader.readAsBinaryString(res);
-	})
+window.onload = function(e){
+  get_file(QueryString()["gcode"], function(res){
+  var blob = new Blob([res], { type: "application/zip" })
+  unzip(blob, function(res){
+    var reader = new FileReader();
+    reader.onload = function() {
+        var res = reader.result
+      plot(res)
+    }
+    reader.readAsBinaryString(res);
+  })
 })
+}
+
 
 setview3d = function(e){
 	document.body.classList.remove("v2d")
