@@ -483,7 +483,7 @@ Ember.TEMPLATES["jobView"] = Ember.Handlebars.template(function anonymous(Handle
     if (stack1 || stack1 === 0) {
         data.buffer.push(stack1);
     }
-    data.buffer.push("</dd>\n    </dl>\n    <dl>\n        <dt>Bounds (@tool center):</dt>\n        <dd>\n            <table class=\"boundsTable\" style=\"text-align:right;\">\n                <thead>\n                <tr>\n                    <th>&nbsp;</th>\n                    <th>min</th>\n                    <th>max</th>\n                </tr>\n                </thead>\n                <tbody>\n                <tr>\n                    <th>X</th>\n                    <td>");
+    data.buffer.push("</dd>\n    </dl>\n    <dl>\n        <dt>Dimensions of print:</dt>\n        <dd>\n            <table class=\"boundsTable\" style=\"text-align:right;\">\n                <thead>\n                <tr>\n                    <th>&nbsp;</th>\n                    <th>min</th>\n                    <th>max</th>\n                </tr>\n                </thead>\n                <tbody>\n                <tr>\n                    <th>X</th>\n                    <td>");
     data.buffer.push(escapeExpression((helper = helpers.num || (depth0 && depth0.num), options = {
         hash: {},
         hashTypes: {},

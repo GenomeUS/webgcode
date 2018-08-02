@@ -6,26 +6,29 @@ body, html {
     height: 100%;
     width: 100%;
     margin: 0;
+    font-family: arial;
 }
 
 body {
-    padding-left: 8px;
     padding-right: 8px;
 }
 
 h1 {
-    margin-top: 0;
+    margin: 0;
+    padding:0.2em;
     text-align: center;
 }
 
 .editBlock {
     position: relative;
     float: right;
-    width: 150px;
+    width: 300px;
     height: 400px;
-    padding: 1px;
+    padding: 1em;
+    padding-left:4em;
     margin: 0;
-    margin-top:4em;
+    margin-top:150px;
+    box-sizing: border-box;
 
 }
 
@@ -63,7 +66,7 @@ h1 {
 
 .ThreeDView {
     border: solid silver 1px;
-    background: #FFF;
+    background: #d9d9d9;
     height: 400px;
     position: relative;
 }
@@ -82,10 +85,10 @@ h1 {
 
 
 .ThreeDView, .TwoDView {
-    height: 800px;
+    height: 900px;
     position:absolute;
-    right: 170px;
-    left: 10px;
+    right: 300px;
+    left: 0px;
 }
 
 #app .TwoDView{
@@ -106,6 +109,7 @@ menu {
     top:0px;
     text-align: right;
     padding-right: 10px;
+    display:none;
 }
 
 menu span {
@@ -150,17 +154,30 @@ body.v2d menu span.view2d {
 
 #create-stats {
     position:absolute;
-    width:140px;
-    right:10px;
+    width:300px;
+    right:0px;
+    padding: 1em;
+    padding-top:0em;
+    box-sizing: border-box;
+}
+
+#create-stats:before {
+    content: url(../images/create-op-small.png);
+    display: block;
+    text-align: center;
+    margin-left: -1em;
 }
 
 #create-stats p#filament-usage{
     text-align:center;
     margin-top: -13px;
+    padding-left:4em;
     width: 130px;
 }
 
-
+#create-stats p {
+    padding-left:3em;
+}
 
 
 .TwoDView * {
@@ -171,3 +188,9 @@ body.v2d menu span.view2d {
     stroke: #c26518 !important;
     stroke-opacity: 0.3;
 }
+
+
+
+
+
+

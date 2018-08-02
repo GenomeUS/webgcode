@@ -194,10 +194,11 @@ define(['THREE', 'TWEEN', 'cnc/util', 'libs/threejs/OrbitControls', 'cnc/ui/cube
                 _this.reRender();
             });
             function createGrid() {
-                var size = 10, step = 5;
-                var grid = new THREE.GridHelper(size, step);
+                var size = 300
+                var step = 50;
+                var grid = new THREE.GridHelper(size, 30);
                 grid.applyMatrix(new THREE.Matrix4().makeRotationX(Math.PI / 2));
-                grid.setColors(0xFF7F2A, 0xFF7F2A);
+                grid.setColors(0x9a9a9a, 0x9a9a9a);
                 return grid;
             }
 
@@ -269,7 +270,7 @@ define(['THREE', 'TWEEN', 'cnc/util', 'libs/threejs/OrbitControls', 'cnc/ui/cube
             
 
             //selfsame - here's the view material
-            this.normalMaterial = new THREE.LineBasicMaterial({linewidth: 1.5, color: 0xc26518, opacity:0.5, transparent:true});
+            this.normalMaterial = new THREE.LineBasicMaterial({linewidth: 1.5, color: 0x985110, opacity:0.5, transparent:true});
 
 
 
