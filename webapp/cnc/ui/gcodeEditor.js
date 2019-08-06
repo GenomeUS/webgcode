@@ -26,7 +26,7 @@ define(['Ember', 'ace'], function (Em, ace) {
             if (arguments.length == 1) {
                 return this.get('editor').getSession().getValue();
             } else {
-                this.get('editor').getSession().setValue(val);
+                // this.get('editor').getSession().setValue(val);
                 return val;
             }
         }.property(),
